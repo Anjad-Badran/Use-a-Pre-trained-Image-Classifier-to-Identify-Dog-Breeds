@@ -70,8 +70,8 @@ def adjust_results4_isadog(results_dic, dogfile):
     # Creates dognames dictionary for quick matching to results_dic labels from
     # real answer & classifier's answer
     dognames_dic = dict()    
-    with open(dogfile, "r") as infile:
-      line = infile.readline()   
+    with open(dogfile, "r") as file:
+      line = file.readline()   
       while line != "":
           line = line.rstrip()
           if line in dognames_dic:
@@ -81,7 +81,7 @@ def adjust_results4_isadog(results_dic, dogfile):
 
           # Reads in next line in file to be processed with while loop
           # if this line isn't empty (EOF)
-          line = infile.readline()  
+          line = file.readline()  
 
 
     for key in results_dic:

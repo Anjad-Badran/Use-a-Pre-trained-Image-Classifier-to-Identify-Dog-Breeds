@@ -97,7 +97,8 @@ def main():
     # classified images as 'a dog' or 'not a dog'. This demonstrates if 
     # model can correctly classify dog images as dogs (regardless of breed)
     # %%%%%%%%% 7
-    adjust_results4_isadog(results, in_arg.dogfile)
+    # print("INNNNNNNNn: ", in_arg.dogfile)
+    adjust_results4_isadog(results, in_arg.dogfile )
 
 
     # Function that checks Results Dictionary for is-a-dog adjustment using results
