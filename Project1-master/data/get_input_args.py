@@ -42,7 +42,7 @@ def get_input_args():
     # Create Parse object using ArgumentParser to allow the users these three external inputs .
     parser = argparse.ArgumentParser()
     # Create 3 command line arguments as mentioned above using add_argument() from ArguementParser method
-    parser.add_argument('--dir', type=str, default='C:/Users/HP/Downloads/Project1-master/Project1-master/data/pet_images/', 
+    parser.add_argument('--dir', type=str, default='pet_images', 
                         help='path to folder of images')
     parser.add_argument('--arch', type=str, default = 'vgg',
                         help='CNN Model Architecture' )
