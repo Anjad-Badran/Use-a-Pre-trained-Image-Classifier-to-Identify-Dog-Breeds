@@ -89,18 +89,20 @@ def print_results(results_dic, results_stats_dic, model,
            results_stats_dic['n_correct_notdogs'])!= 
            results_stats_dic['n_images'] ) 
         ):
-        for key in results_dic:
-            if sum(results_dic[key][3:]) == 1:
-                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
+        print("\n Incorrect Dog: ")
+        for value in results_dic.values():
+            if sum(value[3:]) == 1:
+                print("Real: {:>26}   Classifier: {:>30}".format(value[0],
+                                                          value[1]))
                 
     if (print_incorrect_breed and 
         (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']) 
        ):
-        for key in results_dic:
-            if ( sum(results_dic[key][3:]) == 2 and
-                results_dic[key][2] == 0 ):
-                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
-                                                          results_dic[key][1]))
+        print("\n Incorrect Dog Breeds: ")
+        for val in results_dic.values():
+            if ( sum(val[3:]) == 2 and
+                val[2] == 0 ):
+                print("Real: {:>26}   Classifier: {:>30}".format(val[0],
+                                                          val[1]))
     None
                 

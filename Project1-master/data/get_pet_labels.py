@@ -51,22 +51,22 @@ def get_pet_labels(image_dir):
     results_dic = dict()
     ## Determines number of items in dictionary
     # items_in_dic = len(results_dic)
-    print("\nEmpty Dictionary results_dic - n items", len(results_dic))
-    print("\nno. of in-files ", len(in_files))
+#     print("\nEmpty Dictionary results_dic - n items", len(results_dic))
+#     print("\nno. of in-files ", len(in_files))
 
-    for idx in range(0, len(in_files), 1):
+    for filename in in_files:
            # Skips file if starts with . (like .DS_Store of Mac OSX) because it 
            # isn't an pet image file
-         if in_files[idx][0] != ".":
-           low_pet_image = in_files[idx].lower()
+         if filename[0] != ".":
+           low_pet_image = filename.lower()
            word_list_pet_image = low_pet_image.split("_")
-           pet_name = ""
-           for word in word_list_pet_image:
-               if word.isalpha():
-                    pet_name += word + " "
-           pet_name = pet_name.strip()
-           if in_files[idx] not in results_dic:
-                results_dic[in_files[idx]] = [pet_name]
+          #  pet_name = ""
+          #  for word in word_list_pet_image:
+          #  if word.isalpha():
+           pet_name = " ".join([word.strip() for word in word_list_pet_image if word.isalpha()])  
+          #  pet_name = pet_name.strip()
+           if filename not in results_dic:
+                results_dic[filename] = [pet_name]
               
            else:
                print("** Warning: Duplicate files exist in directory:", in_files[idx])
